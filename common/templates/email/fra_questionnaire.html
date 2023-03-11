@@ -1,0 +1,34 @@
+{% include "email/partials/email-header.html" %}
+
+Hi,
+{{ user.first_name }} {{ user.last_name }} submitted FRA Questionnaire with score <b>{{ quiz.score }}</b>.
+<br>
+User Details:<br>
+<table border="1" style="width: 100%; text-align: center;">
+	<tr>
+		<th>Name</th>
+		<th>{{ user.first_name }} {{ user.last_name }}</th>
+    </tr>
+	<tr>
+		<th>Email</th>
+		<th>{{ user.email }}</th>
+    </tr>
+	<tr>
+		<th>Nationality</th>
+		<th>{{ user.nationality }}</th>
+    </tr>
+	<tr>
+		<th>Contact Number</th>
+		<th>{{ user.contact_number }}</th>
+    </tr>
+    <tr>
+		<th>Company Name</th>
+		<th>{{ user.company_name }}</th>
+    </tr>
+    <tr>
+		<th>Designation</th>
+		<th>{{ user.designation }}</th>
+    </tr>
+</table>
+
+{% include "email/partials/email-footer.html" %}

@@ -1,0 +1,38 @@
+{% include "email/partials/email-header.html" %}
+
+Hi,
+New {{ request.product }} enquiry received from {{ request.name }}.
+<br>
+Requestor Details:<br>
+<table border="1" style="width: 100%; text-align: center;">
+	<tr>
+		<th>Name</th>
+		<th>{{ request.name }}</th>
+    </tr>
+	<tr>
+		<th>Email</th>
+		<th>{{ request.email }}</th>
+    </tr>
+	<tr>
+		<th>Country</th>
+		<th>{{ request.country }}</th>
+    </tr>
+	<tr>
+		<th>Phone</th>
+		<th>{{ request.phone }}</th>
+    </tr>
+    <tr>
+		<th>Company Name</th>
+		<th>{{ request.company_name }}</th>
+    </tr>
+	<tr>
+		<th>Selected Product</th>
+		<th>{{ request.product }}</th>
+    </tr>
+    <tr>
+		<th>Message</th>
+		<th>{{ request.message }}</th>
+    </tr>
+</table>
+
+{% include "email/partials/email-footer.html" %}

@@ -1,0 +1,30 @@
+{% include "email/partials/email-header.html" %}
+
+Hi,
+New brand enquiry received from {{ brand_request.name }}.
+<br>
+Requestor Details:<br>
+<table border="1" style="width: 100%; text-align: center;">
+	<tr>
+		<th>Name</th>
+		<th>{{ brand_request.name }}</th>
+    </tr>
+	<tr>
+		<th>Email</th>
+		<th>{{ brand_request.email }}</th>
+    </tr>
+	<tr>
+		<th>Country</th>
+		<th>{{ brand_request.country }}</th>
+    </tr>
+	<tr>
+		<th>Phone</th>
+		<th>{{ brand_request.phone }}</th>
+    </tr>
+	<tr>
+		<th>Brand</th>
+		<th>{{ brand_request.brand }}</th>
+    </tr>
+</table>
+
+{% include "email/partials/email-footer.html" %}

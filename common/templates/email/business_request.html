@@ -1,0 +1,34 @@
+{% include "email/partials/email-header.html" %}
+
+Hi,
+New {% if business_request.request_type == 1 %}Franchise Development Program{% else %}SME Initiative{% endif %} enquiry received from {{ business_request.name }}.
+<br>
+Requestor Details:<br>
+<table border="1" style="width: 100%; text-align: center;">
+	<tr>
+		<th>Name</th>
+		<th>{{ business_request.name }}</th>
+    </tr>
+	<tr>
+		<th>Email</th>
+		<th>{{ business_request.email }}</th>
+    </tr>
+	<tr>
+		<th>Country</th>
+		<th>{{ business_request.country }}</th>
+    </tr>
+	<tr>
+		<th>Phone</th>
+		<th>{{ business_request.phone }}</th>
+    </tr>
+	<tr>
+		<th>Selected Product</th>
+		<th>{{ business_request.product }}</th>
+    </tr>
+    <tr>
+		<th>Message</th>
+		<th>{{ business_request.message }}</th>
+    </tr>
+</table>
+
+{% include "email/partials/email-footer.html" %}

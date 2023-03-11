@@ -1,0 +1,78 @@
+{% include "email/partials/email-header.html" %}
+
+Hi,
+{{ user.first_name }} {{ user.last_name }} submitted FRA Questionnaire.
+<br>
+Form Data:<br>
+<table border="1" style="width: 100%; text-align: center;">
+	<tr>
+		<th>Name</th>
+		<th>{{ user.first_name }} {{ user.last_name }}</th>
+    </tr>
+	<tr>
+		<th>Email</th>
+		<th>{{ user.email }}</th>
+    </tr>
+    <tr>
+        <th>Business specialty/brief</th>        
+        <th>{{ quiz.business_brief }}</th>        
+    </tr>
+    <tr>
+        <th>When did the business start?</th>        
+        <th>{{ quiz.business_start_year }}</th>        
+    </tr>
+    <tr>
+        <th>How many locations and warehouses?</th>        
+        <th>{{ quiz.locations }} and {{ quiz.warehouses }} </th>        
+    </tr>
+    <tr>
+        <th>What is the ideal size for your stores or showroom?</th>        
+        <th>{{ quiz.ideal_store_size }}</th>        
+    </tr>
+    <tr>
+        <th>Initial investment</th>        
+        <th>{{ quiz.initial_investment }} {{ quiz.initial_investment_currency }}</th>        
+    </tr>
+    <tr>
+        <th>Expected payback period</th>        
+        <th>{{ quiz.fra_paybak_period }}</th>        
+    </tr>
+    <tr>
+        <th>Financial audit reports</th>        
+        <th>{{ quiz.fra_audit }}</th>        
+    </tr>
+    <tr>
+        <th>Internal or external TM registration</th>        
+        <th>{{ quiz.fra_registration }}</th>        
+    </tr>
+    <tr>
+        <th>Do you have a brand manual?</th>        
+        <th>{{ quiz.fra_band_manual }}</th>        
+    </tr>
+    <tr>
+        <th>Do you have a marketing guidelines?</th>        
+        <th>{{ quiz.fra_marketing }}</th>        
+    </tr>
+    <tr>
+        <th>Is the domain registered? (.com or other)</th>        
+        <th>{{ quiz.fra_domain }}</th>        
+    </tr>
+    <tr>
+        <th>What POS system are you using?</th>        
+        <th>{{ quiz.pos }}</th>        
+    </tr>
+    <tr>
+        <th>Do you have a training manuals?</th>        
+        <th>{{ quiz.fra_training }}</th>        
+    </tr>
+    <tr>
+        <th>Is the business profitable on an outlet level?</th>        
+        <th>{{ quiz.fra_level }}</th>        
+    </tr>
+    <tr>
+        <th>What is the average profit percentage?</th>        
+        <th>{{ quiz.profit_precentage }}</th>        
+    </tr>
+</table>
+
+{% include "email/partials/email-footer.html" %}

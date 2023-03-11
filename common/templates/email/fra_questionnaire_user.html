@@ -1,0 +1,64 @@
+{% include "email/partials/email-header.html" %}
+
+Hi,
+{{ user.first_name }} {{ user.last_name }} submitted FRA Questionnaire with score <b>{{ quiz.score }}</b>.
+<br>
+Quiz Score:<br>
+<table border="1" style="width: 100%; text-align: center;">
+	<tr>
+		<th>Name</th>
+		<th>{{ user.first_name }} {{ user.last_name }}</th>
+        <th></th>
+    </tr>
+	<tr>
+		<th>Email</th>
+		<th>{{ user.email }}</th>
+        <th></th>
+    </tr>
+	<tr>
+		<th>PROFITABILITY</th>
+        {% if quiz.partOne <= 15 %}
+		    <th>{{ quiz.partOne }} </th>
+            <th>Profitability is the major key factor for a successful business as well as attracting franchisees to invest in your business. It is recommended you revise your financial structure; such as reducing the operating cost, increasing sales & targeting the right customer segment.</th>
+        {% endif %}
+        {% if quiz.partOne > 15 %}
+		    <th>{{ quiz.partOne }} </th>
+            <th>Profitability is the number one factor playing a role in your readiness to franchise, since it presents an attractive business model for selling your franchise to interested franchisees.</th>
+        {% endif %}
+    </tr>
+	<tr>
+		<th>REPRODUCIBILITY AND KNOW-HOW</th>
+		{% if quiz.partTwo <= 15 %}
+		    <th>{{ quiz.partTwo }} </th>
+            <th>If your know how can't be trasnferred to your franchisees; they will fail to duplicate your operating model. Moreover, failing to have the back support will not make it easy for them to reproduce your operation. It is recommended you have your SOP's and back end in place to support your expansion goals.</th>
+        {% endif %}
+        {% if quiz.partTwo > 15 %}
+		    <th>{{ quiz.partTwo }} </th>
+            <th>Franchisees willl be able to duplicate and operate the same way you are when your know how and back support is transferred to them effecintly and smoothly. You might observe the development of new areas and improvement of others in your business.</th>
+        {% endif %}
+    </tr>
+    <tr>
+		<th>MARKETABILITY</th>
+		{% if quiz.partThree <= 10 %}
+		    <th>{{ quiz.partThree }} </th>
+            <th>Your brand awareness and strong presence plays a major role in granting leads interested in franchising your business. It is recommended you establish a marketing strategy to build on your brand equity and position yourself in the market will give you a competitive advantage over other competitors</th>
+        {% endif %}
+        {% if quiz.partThree > 10 %}
+		    <th>{{ quiz.partThree }} </th>
+            <th>Your brand awareness and strong presence plays a major role in generating qualifies franchisee leads . The more you build on your brand equity and position yourself in the market will give you a competitive advantage over other competitors. Your marketing activities should always be revised and optimized to the trending patterns in the market.</th>
+        {% endif %}
+    </tr>
+    <tr>
+		<th>Designation</th>
+		{% if quiz.partFour <= 10 %}
+		    <th>{{ quiz.partFour }} </th>
+            <th>The organization structure and legal framework is the foundation that will carry your franchise network and support its growth while protecting you. It is advised you establish or rework your organization structure and make sure your trademark is registered where you plan to grow</th>
+        {% endif %}
+        {% if quiz.partFour > 10 %}
+		    <th>{{ quiz.partFour }} </th>
+            <th>The organization structure is the foundation on which you build a strong business and drive growth. Whether that you have a basic structure that can be fine-tuned along the way or a well developed one; you are set to start franchising. </th>
+        {% endif %}
+    </tr>
+</table>
+
+{% include "email/partials/email-footer.html" %}
